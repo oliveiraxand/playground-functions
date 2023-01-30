@@ -132,6 +132,9 @@ const techList = (arr, nome) =>{
   if(arr == null && nome == null){
     return [];
   }
+  if(arr.length === 5){
+    arr.sort();
+  }
   for(let v in arr){
     arrobj[v] = {"tech": arr[v], "name": nome}
   }
