@@ -40,6 +40,9 @@ const highestCount = (arr) => {
 const calcTriangleArea = (base,altura) =>{
   return (base*altura) / 2;
 }
+const calcRectangleArea = (base,altura) =>{
+  return (base * altura);
+}
 // Desafio 7 - Crie a função catAndMouse
 
 // Desafio 8 - Crie a função fizzBuzz
