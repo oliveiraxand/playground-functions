@@ -7,7 +7,10 @@ const splitSentence = (sentence) =>{
   return sentence.split(' ');
 }
 
-// Desafio 3 - Crie a função concatName
+// Desafio 3 - Crie a função concatName - `ultimo item, primeiro item`
+const concatName = (arr) =>{
+  return `${arr[arr.length -1]}, ${arr[0]}`;
+}
 
 // Desafio 4 - Crie a função footballPoints
 
