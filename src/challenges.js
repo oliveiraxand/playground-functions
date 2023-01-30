@@ -13,8 +13,28 @@ const concatName = (arr) =>{
 }
 
 // Desafio 4 - Crie a função footballPoints
+const footballPoints = (wins,ties) =>{
+  return (wins*3) + ties;
+}
 
 // Desafio 5 - Crie a função highestCount
+const highestCount = (arr) => {
+  let maior;
+  let count = 0 ;
+  for(let v of arr){
+    if(maior == null){
+      maior = v;
+    }else if(v > maior){
+      maior = v;
+    }
+  }
+  for(let v of arr){
+    if(v === maior){
+      count++;
+    }
+  }
+  return count;
+}
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
 
