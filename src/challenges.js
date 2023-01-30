@@ -105,6 +105,26 @@ const encode = (sentence) =>{
   }
   return arr;
 } 
+//Função decode
+const decode = (sentence) =>{
+  let enigma ="";
+  for(let v of sentence){
+    if(v === "1"){
+      enigma += "a";
+    }else if(v === "2"){
+      enigma += "e";
+    }else if(v === "3"){
+      enigma += "i";
+    }else if(v === "4"){
+      enigma += "o";
+    }else if(v === "5"){
+      enigma += "u";
+    }else{
+      enigma+=v;
+    }
+  }
+  return enigma;
+}
 // Desafio 10 - Crie a função techList
 const techList = (arr, nome) =>{
   let arrobj = [];
@@ -116,7 +136,7 @@ const techList = (arr, nome) =>{
   }
   return arrobj
 } 
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],"Lucas"))
+//console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],"Lucas"))
 // Não modifique essas linhas
 module.exports = {
   calcTriangleArea: typeof calcTriangleArea === 'function' ? calcTriangleArea : (() => {}),
