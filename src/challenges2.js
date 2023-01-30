@@ -20,11 +20,23 @@ const generatePhoneNumber = (arr) =>{
   return `(${arr[0]}${arr[1]}) ${arr[2]}${arr[3]}${arr[4]}${arr[5]}${arr[6]}-${arr[7]}${arr[8]}${arr[9]}${arr[10]}`;
 
 }
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
-// Desafio 12 -  Crie a função triangleCheck
+//console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
+// Desafio 12 -  Crie a função triangleCheck  
 
 // Desafio 13 - Crie a função hydrate
-
+const hydrate = (sentence) =>{
+  let r = /\d+/g;
+  let arrI = sentence.match(r);
+  let soma = 0;
+  for(let v of arrI){
+    soma+=parseInt(v);
+  }
+  if(soma === 1){
+    return `${soma} copo de água`;
+  }
+  return `${soma} copos de água`;
+}
+console.log(hydrate('1 cerveja'));
 /* eslint no-undef: 0 */
 
 // Não modifique essas linhas
