@@ -86,9 +86,26 @@ const fizzBuzz = (arr) => {
   return retorno.split(' ');
 } 
 
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
 // Desafio 9 - Crie a função encode e a função decode
-
+const encode = (sentence) =>{
+  let arr ="";
+  for(let v of sentence){
+    if(v === "a"){
+      arr += "1";
+    }else if(v === "e"){
+      arr += "2";
+    }else if(v === "i"){
+      arr += "3";
+    }else if(v === "o"){
+      arr += "4";
+    }else if(v === "u"){
+      arr += "5";
+    }else{
+      arr+=v;
+    }
+  }
+  return arr;
+} 
 // Desafio 10 - Crie a função techList
 
 // Não modifique essas linhas
