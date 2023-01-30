@@ -21,6 +21,7 @@ const footballPoints = (wins,ties) =>{
 const highestCount = (arr) => {
   let maior;
   let count = 0 ;
+  //Descobrir qual o maior
   for(let v of arr){
     if(maior == null){
       maior = v;
@@ -28,6 +29,7 @@ const highestCount = (arr) => {
       maior = v;
     }
   }
+  //Descobrir quantas vezes o maior aparece
   for(let v of arr){
     if(v === maior){
       count++;
@@ -54,16 +56,37 @@ const calcAllAreas = (base,altura,forma) =>{
 }
 // Desafio 7 - Crie a função catAndMouse
 const catAndMouse = (mouse,cat1,cat2) => {
+  //verifica se a distancia do cat1 para o rato é menor
   if(mouse-cat1 < mouse-cat2){
     return "cat1";
+  //verifica se a distancia é a mesma
   }else if(mouse-cat1 === mouse-cat2){
     return "os gatos trombam e o rato foge";
+  //condição contrária a primeira
   }else{
     return "cat2";
   }
 }
-// Desafio 8 - Crie a função fizzBuzz
+// Desafio 8 - Crie a função fizzBuzz -  
+//divisívelapenas por 3, por 5 e 
+//por 3 e 5
+const fizzBuzz = (arr) => {
+  let retorno = [];
+  for(let v of arr){
+    if(v % 3 == 0 && v % 5 == 0){
+      retorno+="fizzBuzz";
+    }else if(v % 3 == 0){
+      retorno += "fizz";
+    }else if(v % 5 == 0){
+      retorno += "buzz";
+    }else{
+      retorno += "bug!";
+    }
+  }
+  return retorno.split(' ');
+} 
 
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
 // Desafio 9 - Crie a função encode e a função decode
 
 // Desafio 10 - Crie a função techList
