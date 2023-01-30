@@ -43,6 +43,15 @@ const calcTriangleArea = (base,altura) =>{
 const calcRectangleArea = (base,altura) =>{
   return (base * altura);
 }
+const calcAllAreas = (base,altura,forma) =>{
+  if(forma == "triângulo"){
+    return `O valor da área do triângulo é de: ${calcTriangleArea(base,altura)}`;
+  }else if (forma == "retângulo"){
+    return `O valor da área do retângulo é de: ${calcRectangleArea(base,altura)}`;
+  }else {
+    return `Não foi possível fazer o cálculo, insira uma forma geométrica válida`;
+  }
+}
 // Desafio 7 - Crie a função catAndMouse
 
 // Desafio 8 - Crie a função fizzBuzz
