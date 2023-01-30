@@ -72,20 +72,20 @@ const catAndMouse = (mouse,cat1,cat2) => {
 //por 3 e 5
 const fizzBuzz = (arr) => {
   let retorno = [];
-  for(let v of arr){
-    if(v % 3 == 0 && v % 5 == 0){
-      retorno+="fizzBuzz";
-    }else if(v % 3 == 0){
-      retorno += "fizz";
-    }else if(v % 5 == 0){
-      retorno += "buzz";
+  for(let v in arr){
+    if(arr[v] % 3 == 0 && arr[v] % 5 == 0){
+      retorno[v] ="fizzBuzz";
+    }else if(arr[v] % 3 == 0){
+      retorno[v] ="fizz";
+    }else if(arr[v] % 5 == 0){
+      retorno[v] = "buzz";
     }else{
-      retorno += "bug!";
+      retorno[v] ="bug!";
     }
   }
-  return retorno.split(' ');
+  return retorno;
 } 
-
+console.log(fizzBuzz([2, 15, 7, 9, 45]))
 // Desafio 9 - Crie a função encode e a função decode
 const encode = (sentence) =>{
   let arr ="";
