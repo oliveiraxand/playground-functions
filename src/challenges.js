@@ -36,8 +36,10 @@ const highestCount = (arr) => {
   return count;
 }
 
-// Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
-
+// Desafio 6 - Crie as funções calcTriangleArea(base * altura) / 2), calcRectangleArea(base * altura) e calcAllAreas
+const calcTriangleArea = (base,altura) =>{
+  return (base*altura) / 2;
+}
 // Desafio 7 - Crie a função catAndMouse
 
 // Desafio 8 - Crie a função fizzBuzz
