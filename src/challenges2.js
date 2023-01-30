@@ -3,12 +3,21 @@ const generatePhoneNumber = (arr) =>{
   let erroMsg ="não é possível gerar um número de telefone com esses valores";
   //Verifica se é diferente de 11
   if(arr.length !== 11){
-    return erroMsg;
+    return 'Array com tamanho incorreto.';
   }
   //Verifica se o mesmo numero se repete 3x ou 
   let count = 0;
-  for(let v of arr){
-
+  for(let i = 0;i<arr.length;i++){
+    for(let u = 0;u<arr.length;u++){
+      if(arr[u] === arr[i]){
+        count++;
+      }
+    }
+    if(count>2){
+      return erroMsg;
+    }else{
+      count = 0;
+    }
   }
   //verifica se existe um numero menor que 0 ou maior que 9
   for(let v of arr){
@@ -20,7 +29,7 @@ const generatePhoneNumber = (arr) =>{
   return `(${arr[0]}${arr[1]}) ${arr[2]}${arr[3]}${arr[4]}${arr[5]}${arr[6]}-${arr[7]}${arr[8]}${arr[9]}${arr[10]}`;
 
 }
-//console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
 // Desafio 12 -  Crie a função triangleCheck  
 
 // Desafio 13 - Crie a função hydrate
@@ -36,7 +45,6 @@ const hydrate = (sentence) =>{
   }
   return `${soma} copos de água`;
 }
-console.log(hydrate('1 cerveja'));
 /* eslint no-undef: 0 */
 
 // Não modifique essas linhas
