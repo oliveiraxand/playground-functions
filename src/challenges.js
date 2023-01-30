@@ -85,7 +85,6 @@ const fizzBuzz = (arr) => {
   }
   return retorno;
 } 
-console.log(fizzBuzz([2, 15, 7, 9, 45]))
 // Desafio 9 - Crie a função encode e a função decode
 const encode = (sentence) =>{
   let arr ="";
@@ -107,7 +106,17 @@ const encode = (sentence) =>{
   return arr;
 } 
 // Desafio 10 - Crie a função techList
-
+const techList = (arr, nome) =>{
+  let arrobj = [];
+  if(arr == null && nome == null){
+    return [];
+  }
+  for(let v in arr){
+    arrobj[v] = {"tech": arr[v], "name": nome}
+  }
+  return arrobj
+} 
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'],"Lucas"))
 // Não modifique essas linhas
 module.exports = {
   calcTriangleArea: typeof calcTriangleArea === 'function' ? calcTriangleArea : (() => {}),
