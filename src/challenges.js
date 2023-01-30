@@ -1,5 +1,7 @@
 // Desafio 1 - Crie a função compareTrue
-
+const compareTrue = (p1,p2) =>{
+  return p1 && p2;
+}
 // Desafio 2 - Crie a função splitSentence
 
 // Desafio 3 - Crie a função concatName
