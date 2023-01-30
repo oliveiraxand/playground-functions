@@ -29,9 +29,17 @@ const generatePhoneNumber = (arr) =>{
   return `(${arr[0]}${arr[1]}) ${arr[2]}${arr[3]}${arr[4]}${arr[5]}${arr[6]}-${arr[7]}${arr[8]}${arr[9]}${arr[10]}`;
 
 }
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]))
 // Desafio 12 -  Crie a função triangleCheck  
-
+const triangleCheck = (nA,nB,nC) => {
+  if(nA < Math.abs(nB+nC) && nA >Math.abs(nB-nC)){
+    return true;
+  }else if(nA<(nB+nC) && nB<(nA+nC) && nC < (nA+nB)){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(triangleCheck(10,14,8));
 // Desafio 13 - Crie a função hydrate
 const hydrate = (sentence) =>{
   let r = /\d+/g;
