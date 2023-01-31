@@ -1,4 +1,5 @@
 // Desafio 11 - Crie a função generatePhoneNumbera
+// Verifica se o mesmo numero se repete 3x ou
 const verify3Times = (arr) => {
   let count = 0;
   for (let i = 0; i < arr.length; i += 1) {
@@ -14,6 +15,8 @@ const verify3Times = (arr) => {
   }
   return false;
 };
+
+// verifica se existe um numero menor que n1 ou maior que n2
 const lessBigger = (n1, n2, arr) => {
   for (let v of arr) {
     if (v > 9 || v < 0) {
@@ -44,7 +47,7 @@ const generatePhoneNumber = (arr) => {
 };
 // Desafio 12 -  Crie a função triangleCheck
 const triangleCheck = (nA, nB, nC) => {
-  if (nA < Math.abs(nB + nC) && nA > Math.abs(nB - nC)) {
+  if (nA < (nB + nC) && nA > Math.abs(nB - nC)) {
     return true;
   } if (nA < (nB + nC) && nB < (nA + nC) && nC < (nA + nB)) {
     return true;
@@ -58,7 +61,7 @@ const hydrate = (sentence) => {
   let arrI = sentence.match(r);
   let soma = 0;
   for (let v of arrI) {
-    soma += parseInt(v);
+    soma += parseInt(v, 10);
   }
   if (soma === 1) {
     return `${soma} copo de água`;
