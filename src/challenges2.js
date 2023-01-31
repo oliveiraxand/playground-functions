@@ -14,6 +14,14 @@ const verify3Times = (arr) => {
   }
   return false;
 };
+const lessBigger = (n1, n2, arr) => {
+  for (let v of arr) {
+    if (v > 9 || v < 0) {
+      return true;
+    }
+  }
+  return false;
+};
 const generatePhoneNumber = (arr) => {
   let erroMsg = 'não é possível gerar um número de telefone com esses valores';
   // Verifica se é diferente de 11
@@ -25,10 +33,8 @@ const generatePhoneNumber = (arr) => {
     return erroMsg;
   }
   // verifica se existe um numero menor que 0 ou maior que 9
-  for (let v of arr) {
-    if (v > 9 || v < 0) {
-      return erroMsg;
-    }
+  if (lessBigger(0, 9, arr)) {
+    return erroMsg;
   }
   //* *TEMPLATE LITERALS** (12) 34567-8901
   let ddd = `${arr[0]}${arr[1]}`;

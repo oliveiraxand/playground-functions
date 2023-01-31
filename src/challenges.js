@@ -17,14 +17,13 @@ const highest = (arr) => {
   for (let v of arr) {
     if (maior === undefined) {
       maior = v;
-
     } else if (v > maior) {
       maior = v;
-    } 
+    }
   }
   return maior;
 };
-console.log(highest([1, 2, 3, 3, 3, 3]))
+console.log(highest([1, 2, 3, 3, 3, 3]));
 const highestCount = (arr) => {
   let maior = highest(arr);
   console.log(maior);
