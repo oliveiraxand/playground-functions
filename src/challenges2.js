@@ -1,17 +1,22 @@
 // Desafio 11 - Crie a função generatePhoneNumbera
 // Verifica se o mesmo numero se repete 3x ou
+//
+const forVerifyTimes = (arr, i) => {
+  let count = 0;
+  for (let u = 0; u < arr.length; u += 1) {
+    if (arr[u] === arr[i]) {
+      count += 1;
+    }
+  }
+  return count;
+};
 const verify3Times = (arr) => {
   let count = 0;
   for (let i = 0; i < arr.length; i += 1) {
-    for (let u = 0; u < arr.length; u += 1) {
-      if (arr[u] === arr[i]) {
-        count += 1;
-      }
-    }
+    count = forVerifyTimes(arr, i);
     if (count > 2) {
       return true;
     }
-    count = 0;
   }
   return false;
 };
