@@ -1,11 +1,5 @@
 // Desafio 11 - Crie a função generatePhoneNumbera
-const generatePhoneNumber = (arr) => {
-  let erroMsg = 'não é possível gerar um número de telefone com esses valores';
-  // Verifica se é diferente de 11
-  if (arr.length !== 11) {
-    return 'Array com tamanho incorreto.';
-  }
-  // Verifica se o mesmo numero se repete 3x ou
+const verify3Times = (arr) => {
   let count = 0;
   for (let i = 0; i < arr.length; i += 1) {
     for (let u = 0; u < arr.length; u += 1) {
@@ -14,9 +8,21 @@ const generatePhoneNumber = (arr) => {
       }
     }
     if (count > 2) {
-      return erroMsg;
+      return true;
     }
     count = 0;
+  }
+  return false;
+};
+const generatePhoneNumber = (arr) => {
+  let erroMsg = 'não é possível gerar um número de telefone com esses valores';
+  // Verifica se é diferente de 11
+  if (arr.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+  // Verifica se o mesmo numero se repete 3x ou
+  if (verify3Times(arr)) {
+    return erroMsg;
   }
   // verifica se existe um numero menor que 0 ou maior que 9
   for (let v of arr) {
@@ -28,7 +34,7 @@ const generatePhoneNumber = (arr) => {
   let ddd = `${arr[0]}${arr[1]}`;
   let leftNumbers = `${arr[2]}${arr[3]}${arr[4]}${arr[5]}${arr[6]}`;
   let rightNumbers = `${arr[7]}${arr[8]}${arr[9]}${arr[10]}`;
-  return `(${ddd})${leftNumbers}-${rightNumbers}`;
+  return `(${ddd}) ${leftNumbers}-${rightNumbers}`;
 };
 // Desafio 12 -  Crie a função triangleCheck
 const triangleCheck = (nA, nB, nC) => {

@@ -15,16 +15,19 @@ const footballPoints = (wins, ties) => (wins * 3) + ties;
 const highest = (arr) => {
   let maior;
   for (let v of arr) {
-    if (maior === null) {
+    if (maior === undefined) {
       maior = v;
+
     } else if (v > maior) {
       maior = v;
-    }
+    } 
   }
   return maior;
 };
+console.log(highest([1, 2, 3, 3, 3, 3]))
 const highestCount = (arr) => {
   let maior = highest(arr);
+  console.log(maior);
   let count = 0;
   // Descobrir quantas vezes o maior aparece
   for (let v of arr) {
