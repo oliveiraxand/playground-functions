@@ -1,6 +1,6 @@
 // Desafio 11 - Crie a função generatePhoneNumbera
-// Verifica se o mesmo numero se repete 3x ou
-//
+
+// Verifica Quantas vezes o número se repete
 const forVerifyTimes = (arr, i) => {
   let count = 0;
   for (let u = 0; u < arr.length; u += 1) {
@@ -10,6 +10,7 @@ const forVerifyTimes = (arr, i) => {
   }
   return count;
 };
+// Verifica se o mesmo numero se repete 3x ou
 const verify3Times = (arr) => {
   let count = 0;
   for (let i = 0; i < arr.length; i += 1) {
@@ -51,10 +52,14 @@ const generatePhoneNumber = (arr) => {
   return `(${ddd}) ${leftNumbers}-${rightNumbers}`;
 };
 // Desafio 12 -  Crie a função triangleCheck
+// Descobrir se a medida de um dos lados é menor que a soma e maior que a diferença
+const measureLessAndBigger = (nA, nB, nC) => nA < (nB + nC) && nA > Math.abs(nB - nC);
+// Descobrir se algum lado é menor
+const anySideLess = (nA, nB, nC) => nA < (nB + nC) && nB < (nA + nC) && nC < (nA + nB);
 const triangleCheck = (nA, nB, nC) => {
-  if (nA < (nB + nC) && nA > Math.abs(nB - nC)) {
+  if (measureLessAndBigger(nA, nB, nC)) {
     return true;
-  } if (nA < (nB + nC) && nB < (nA + nC) && nC < (nA + nB)) {
+  } if (anySideLess(nA, nB, nC)) {
     return true;
   }
   return false;
