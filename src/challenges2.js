@@ -1,58 +1,58 @@
-// Desafio 11 - Crie a função generatePhoneNumber
-const generatePhoneNumber = (arr) =>{
-  let erroMsg ="não é possível gerar um número de telefone com esses valores";
-  //Verifica se é diferente de 11
-  if(arr.length !== 11){
+// Desafio 11 - Crie a função generatePhoneNumbera
+const generatePhoneNumber = (arr) => {
+  let erroMsg = 'não é possível gerar um número de telefone com esses valores';
+  // Verifica se é diferente de 11
+  if (arr.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
-  //Verifica se o mesmo numero se repete 3x ou 
+  // Verifica se o mesmo numero se repete 3x ou
   let count = 0;
-  for(let i = 0;i<arr.length;i++){
-    for(let u = 0;u<arr.length;u++){
-      if(arr[u] === arr[i]){
-        count++;
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let u = 0; u < arr.length; u += 1) {
+      if (arr[u] === arr[i]) {
+        count += 1;
       }
     }
-    if(count>2){
-      return erroMsg;
-    }else{
-      count = 0;
-    }
-  }
-  //verifica se existe um numero menor que 0 ou maior que 9
-  for(let v of arr){
-    if(v>9 || v<0){
+    if (count > 2) {
       return erroMsg;
     }
+    count = 0;
   }
-  //**TEMPLATE LITERALS** (12) 34567-8901
-  return `(${arr[0]}${arr[1]}) ${arr[2]}${arr[3]}${arr[4]}${arr[5]}${arr[6]}-${arr[7]}${arr[8]}${arr[9]}${arr[10]}`;
-
-}
-// Desafio 12 -  Crie a função triangleCheck  
-const triangleCheck = (nA,nB,nC) => {
-  if(nA < Math.abs(nB+nC) && nA >Math.abs(nB-nC)){
-    return true;
-  }else if(nA<(nB+nC) && nB<(nA+nC) && nC < (nA+nB)){
-    return true;
-  }else{
-    return false;
+  // verifica se existe um numero menor que 0 ou maior que 9
+  for (let v of arr) {
+    if (v > 9 || v < 0) {
+      return erroMsg;
+    }
   }
-}
-console.log(triangleCheck(10,14,8));
+  //* *TEMPLATE LITERALS** (12) 34567-8901
+  let ddd = `${arr[0]}${arr[1]}`;
+  let leftNumbers = `${arr[2]}${arr[3]}${arr[4]}${arr[5]}${arr[6]}`;
+  let rightNumbers = `${arr[7]}${arr[8]}${arr[9]}${arr[10]}`;
+  return `(${ddd})${leftNumbers}-${rightNumbers}`;
+};
+// Desafio 12 -  Crie a função triangleCheck
+const triangleCheck = (nA, nB, nC) => {
+  if (nA < Math.abs(nB + nC) && nA > Math.abs(nB - nC)) {
+    return true;
+  } if (nA < (nB + nC) && nB < (nA + nC) && nC < (nA + nB)) {
+    return true;
+  }
+  return false;
+};
+console.log(triangleCheck(10, 14, 8));
 // Desafio 13 - Crie a função hydrate
-const hydrate = (sentence) =>{
+const hydrate = (sentence) => {
   let r = /\d+/g;
   let arrI = sentence.match(r);
   let soma = 0;
-  for(let v of arrI){
-    soma+=parseInt(v);
+  for (let v of arrI) {
+    soma += parseInt(v);
   }
-  if(soma === 1){
+  if (soma === 1) {
     return `${soma} copo de água`;
   }
   return `${soma} copos de água`;
-}
+};
 /* eslint no-undef: 0 */
 
 // Não modifique essas linhas
