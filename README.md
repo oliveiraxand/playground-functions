@@ -38,7 +38,8 @@ Este projeto consiste em uma série de funções implementadas em JavaScript, ca
 
 1. Clone o repositório
 2. Acesse a pasta do projeto
-3. Siga as instruções do arquivo README.md presente na pasta para executar e testar as funções implementadas.
+3. Instale as dependencias com o comando npm install
+4. Inicie o projeto com o comando npm start
 
 ## Autor
 
